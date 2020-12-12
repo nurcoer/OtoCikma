@@ -1,4 +1,6 @@
-﻿using DevFramework.Core.Ascpects.Postsharp.LogAspects;
+﻿using DevFramework.Core.Ascpects.Postsharp.Exceptionaspects;
+using DevFramework.Core.Ascpects.Postsharp.LogAspects;
+using DevFramework.Core.Ascpects.Postsharp.PerformanceAspects;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.loggers;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -16,6 +18,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: LogAspect(typeof(DatabaseLogger),AttributeTargetTypes = "DevFramework.Northwind.Business.Concrete.Manager.*")]
+[assembly: ExceptionLogAspect(typeof(DatabaseLogger), AttributeTargetTypes = "DevFramework.Northwind.Business.Concrete.Manager.*")]
+[assembly: PerformanceCounterAspect(AttributeTargetTypes = "DevFramework.Northwind.Business.Concrete.Manager.*")]
 
 // ComVisible özniteliğinin false olarak ayarlanması bu bütünleştirilmiş koddaki türleri
 // COM bileşenleri için görünmez yapar. Bu bütünleştirilmiş koddaki bir türe

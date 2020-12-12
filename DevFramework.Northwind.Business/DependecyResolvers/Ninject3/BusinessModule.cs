@@ -17,10 +17,10 @@ namespace DevFramework.Northwind.Business.DependecyResolvers.Ninject3
         {
             //biri senden ıproductservis isterse Product servisi ver ve bu nu bir kere new() lemek için Insingeltonscope kodu kullanıldı.
             Bind<IProductService>().To<ProductManager>().InSingletonScope();
-            Bind<IProductDal>().To<EfProductDal>();
+            Bind<IProductDal>().To<EfProductDal>().InSingletonScope();
 
-
-
+            Bind<IUserService>().To<UserManager>();
+            Bind<IUserDal>().To<EfUserDal>();
 
 
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));

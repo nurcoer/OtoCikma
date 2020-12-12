@@ -38,5 +38,25 @@ namespace DevFramework.Northwind.MvcWebUI.Controllers
             return  "added";
             
         }
+
+        public string AddUpdate()
+        {
+            //eklenen ikinci ürün hatalı olmasına ragmen product managerdaki validasyon aspectine yakalanmıyor!!!
+            _productService.TransactionalOperation(new Product
+            {
+                CategoryId = 1,
+                ProductName = "Computer",
+                QuantityPerUnit = "1",
+                UnitPrice = 21
+            }, new Product
+            {
+                CategoryId = 1,
+                ProductName = "Computer 2",
+                QuantityPerUnit = "1",
+                UnitPrice = 10,
+                ProductId = 2
+            });
+            return "Done";
+        }
     }
 }

@@ -63,7 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IProductService.cs" />
+    <Compile Include="Abstract\IUserService.cs" />
     <Compile Include="Concrete\Manager\ProductManager.cs" />
+    <Compile Include="Concrete\Manager\UserManager.cs" />
     <Compile Include="DependecyResolvers\Ninject3\BusinessModule.cs" />
     <Compile Include="DependecyResolvers\Ninject3\ValidationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
