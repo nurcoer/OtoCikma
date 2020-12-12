@@ -23,7 +23,7 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
         }
 
         [FluentValidationAspect(typeof(ProductValidatior))]
-        
+        [CacheRemoveAspect(typeof(MemoryCacheManger))]
         public Product Add(Product product)
         {
             return _productDal.Add(product);

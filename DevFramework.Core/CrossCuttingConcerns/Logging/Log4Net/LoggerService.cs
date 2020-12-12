@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net
 {
+
     public class LoggerService
     {
         // logları json formatında tutucaz.
