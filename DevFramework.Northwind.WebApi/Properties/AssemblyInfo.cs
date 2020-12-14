@@ -2,9 +2,9 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// Bir derlemeyle ilgili Genel Bilgiler aşağıdaki öznitelik kümesi kullanılarak 
-// denetlenir. Bir derlemeyle ilişkilendirilmiş bilgileri değiştirmek için bu
-// öznitelik değerlerini değiştirin.
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
 [assembly: AssemblyTitle("DevFramework.Northwind.WebApi")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -14,22 +14,22 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// ComVisible özniteliğini false olarak ayarlarsanız COM bileşenleri bu 
-// derlemedeki türleri göremez. Bu derlemedeki bir türe COM'dan erişmeniz 
-// gerekiyorsa, o türde ComVisible özniteliğini true olarak ayarlayın.
+// Setting ComVisible to false makes the types in this assembly not visible 
+// to COM components.  If you need to access a type in this assembly from 
+// COM, set the ComVisible attribute to true on that type.
 [assembly: ComVisible(false)]
 
-// Bu proje COM'a açılmışsa aşağıdaki GUID typelib'in ID'si içindir
-[assembly: Guid("9651b4b1-6fa3-4553-be38-c6459e6ba170")]
+// The following GUID is for the ID of the typelib if this project is exposed to COM
+[assembly: Guid("cb479b27-932f-4256-b1fc-4732db33ffe1")]
 
-// Bir derlemenin sürüm bilgisi aşağıdaki dört değerden oluşur:
+// Version information for an assembly consists of the following four values:
 //
-//      Ana Sürüm
-//      Alt Sürüm 
-//      Yapı Numarası
-//      Düzeltme
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
 //
-// Tüm değerleri belirtebilirsiniz veya Düzeltme ve Yapı Numaralarına aşağıda 
-// gösterildiği gibi '*' ile varsayılan değer atayabilirsiniz:
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]

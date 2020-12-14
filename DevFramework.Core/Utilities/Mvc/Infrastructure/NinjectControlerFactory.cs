@@ -12,7 +12,7 @@ namespace DevFramework.Core.Utilities.Mvc.Infrastructure
 
         private IKernel _kernel;
 
-        public NinjectControlerFactory(INinjectModule module)
+        public NinjectControlerFactory(params INinjectModule[] module)
         {
             _kernel = new StandardKernel(module);
         }

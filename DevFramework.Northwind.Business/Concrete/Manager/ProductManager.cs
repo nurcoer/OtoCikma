@@ -1,18 +1,16 @@
-﻿
+﻿using AutoMapper;
 using DevFramework.Core.Ascpects.Postsharp;
 using DevFramework.Core.Ascpects.Postsharp.AuthorizationAspects;
 using DevFramework.Core.Ascpects.Postsharp.CacheAspects;
-using DevFramework.Core.Ascpects.Postsharp.LogAspects;
 using DevFramework.Core.Ascpects.Postsharp.PerformanceAspects;
 using DevFramework.Core.Ascpects.Postsharp.TransactionAspects;
 using DevFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
-using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.loggers;
+using DevFramework.Core.Utilities.Mappings;
 using DevFramework.Northwind.Business.Abstract;
 using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
 using DevFramework.Northwind.DataAccess.Abstract;
 using DevFramework.Northwind.Entities.Concrete;
 using System.Collections.Generic;
-using System.Threading;
 
 namespace DevFramework.Northwind.Business.Concrete.Manager
 {
@@ -20,10 +18,14 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
     {
         private IProductDal _productDal;
 
-        public ProductManager(IProductDal procudtDal)
+        public readonly IMapper _mapper ;
+
+        public ProductManager(IProductDal procudtDal,IMapper mapper)
         {
             _productDal = procudtDal;
+            _mapper = mapper;
         }
+
 
         [FluentValidationAspect(typeof(ProductValidatior))]
         [CacheRemoveAspect(typeof(MemoryCacheManger))]
@@ -34,12 +36,16 @@ namespace DevFramework.Northwind.Business.Concrete.Manager
 
         [CacheAspect(typeof(MemoryCacheManger))]
         [PerformanceCounterAspect(2)]
-        [SecuredOperation(Roles="Admin")]
+        [SecuredOperation(Roles="Admin,Editor,Student")]
         public List<Product> GetAll()
         {
-           // Thread.Sleep(3000); --- aspect sorununu çözünce performance counterı denicez
-            return _productDal.GetList();
+            // Thread.Sleep(3000); --- aspect sorununu çözünce performance counterı denicez
+
+            var products = _mapper.Map<List<Product>>(_productDal.GetList());
+            return products;
         }
+
+       
 
         public Product GetById(int id)
         {
