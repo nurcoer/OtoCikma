@@ -20,7 +20,7 @@ namespace DevFramework.Northwind.MvcWebUI
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            ControllerBuilder.Current.SetControllerFactory(new NinjectControlerFactory(new BusinessModule(), new AutoMapperModule()));
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControlerFactory(new ServiceModule(), new AutoMapperModule()));
         }
 
         /*asp.net MVCde kullanıcının identity bilgilerine erişilebilir olduğu zaman (get set olayı olduğunda) 

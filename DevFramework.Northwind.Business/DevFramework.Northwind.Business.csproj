@@ -56,6 +56,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -72,9 +73,11 @@
     <Compile Include="DependecyResolvers\Ninject3\AutoMapperModule.cs" />
     <Compile Include="DependecyResolvers\Ninject3\BusinessModule.cs" />
     <Compile Include="DependecyResolvers\Ninject3\InstanceFactory.cs" />
+    <Compile Include="DependecyResolvers\Ninject3\ServiceModule.cs" />
     <Compile Include="DependecyResolvers\Ninject3\ValidationModule.cs" />
     <Compile Include="Mappings\AutoMapper\Profiles\BussinesProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContracts\IProductDetailService.cs" />
     <Compile Include="ValidationRules\FluentValidation\ProductValidatior.cs" />
   </ItemGroup>
   <ItemGroup>
